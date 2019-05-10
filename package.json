@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Express BE for CallComplain",
   "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js"
+  },
   "repository": "https://github.com/labs12-call-complain/labs-call-back-BE.git",
   "author": "tactnician <tactnician@gmail.com>",
   "license": "MIT",
@@ -15,6 +19,10 @@
     "helmet": "^3.18.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^7.10.0",
-    "sqlite3": "^4.0.7"
+    "sqlite3": "^4.0.7",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }
