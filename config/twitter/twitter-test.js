@@ -9,12 +9,21 @@ const client = new Twitter({
 });
 
 
-
 const getFav = client.get('favorites/list', function(error, tweets, response) {
     if(error) throw error;
     console.log(tweets);  // The favorites.
     console.log(response);  // Raw response object.
 });
 
+function postTweet() { client.post('statuses/update', {status: "I love twitter"})
+    .then(tweet => {
+        console.log(tweet)
+    })
+    .catch(error => {
+        console.log(error)
+})
+}
+
 
 console.log(getFav);
+

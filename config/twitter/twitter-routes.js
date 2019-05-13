@@ -18,3 +18,5 @@ module.exports ={
 //     }
     
 // }
+
+// client.post("statuses/update", {status: "I love twitter"})
