@@ -16,6 +16,7 @@ server.get('/', (req, res) => {
     `)
 })
 
-configureRoutes(server);
+// configureRoutes(server);
+server.use('/api/routes', configureRoutes)
 
 module.exports = server;
