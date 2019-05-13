@@ -16,5 +16,13 @@ const getFav = client.get('favorites/list', function(error, tweets, response) {
     console.log(response);  // Raw response object.
 });
 
+const sendTweet = client.post('statuses/update', {status: 'I Love Twitter'})
+        .then(function (tweet) {
+            console.log(tweet);
+        }) //it should return tweet, user and id
+        .catch(function (error) {
+            throw err
+        })
 
 console.log(getFav);
+console.log(sendTweet);
