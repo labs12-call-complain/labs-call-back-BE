@@ -6,16 +6,15 @@ module.exports ={
 
 }
 
-async function sendTweet(req, res) {
-    try {
-        const tweet = await client.post(
-            'statuses/update', 
-            {status: 'Tweet From Express'}
-        );
-        console.log(tweet)
-    } catch (error) {
-        console.log(error)
-    }
+// async function sendTweet(req, res) {
+//     try {
+//         const tweet = await client.post(
+//             'statuses/update', 
+//             {status: 'Tweet From Express'}
+//         );
+//         console.log(tweet)
+//     } catch (error) {
+//         console.log(error)
+//     }
     
-
-}
+// }
