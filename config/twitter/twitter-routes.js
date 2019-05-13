@@ -2,7 +2,7 @@ require('dotenv').config();
 const Twitter = require('twitter');
 
 module.exports ={ 
-
+//  api/twetts .post sendtweet
 
 }
 
@@ -20,3 +20,7 @@ module.exports ={
 // }
 
 // client.post("statuses/update", {status: "I love twitter"})
+
+
+// once we have datat send to back and send to front 
+// }
