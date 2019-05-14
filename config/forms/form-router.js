@@ -45,7 +45,7 @@ router.post('/makepost', (req, res) => {
     .addPost(post)
 
     .then(post => {
-        res.status(201).json(post)
+        res.status(201).json({post})
     })
     .catch(error => {
         res.status(400).json({
@@ -54,22 +54,5 @@ router.post('/makepost', (req, res) => {
     })
 })
 
-// Twitter router
-
-router.post('/makeatweet', (req, res) => {
-    const post = req.body;
-
-    formDB
-    .postTweet(post)
-
-    .then(post => {
-        res.status(201).json(post)
-    })
-    .catch(error => {
-        res.status(400).json({
-            error: "couldnt post"
-        })
-    })
-})
 
 module.exports = router;
