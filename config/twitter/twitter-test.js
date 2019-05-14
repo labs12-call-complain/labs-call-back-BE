@@ -25,4 +25,4 @@ const sendTweet = client.post('statuses/update', {status: 'I Love Twitter'})
         })
 
 console.log(getFav);
-console.log(sendTweet);
+// console.log(sendTweet);
