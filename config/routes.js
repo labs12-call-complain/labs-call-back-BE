@@ -1,8 +1,9 @@
-const {sendTweet } = require('./twitter/twitter-routes');
+const {postTweet, getTweet, delTweet } = require('./twitter/twitter-routes');
 
 module.exports = server => {
-    server.post('https://api.twitter.com/1.1/', sendTweet)
+    //Tweet Routes
+    server.post('/api/tweets', postTweet);
+    server.get('/api/tweets/:id', getTweet);
+    server.post('/api/tweets/:id', delTweet);
 
-
-    
 }
