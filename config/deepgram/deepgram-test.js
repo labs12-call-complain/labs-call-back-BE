@@ -1,12 +1,10 @@
 require('dotenv').config();
-// const axios = require('axios');
-
 const axios = require('axios');
 // const fs = require('fs');
 
 let url = 'https://brain.deepgram.com/v2/listen';
-// let username = 'aladdin';
-// let password = 'opensesame';
+let username = process.env.DEEPGRAM_USERNAME;
+let password = process.env.DEEPGRAM_PASSWORD;
 // let audio = fs.readFileSync('/path/to/audio.wav');
 
 const test = axios({
@@ -14,8 +12,8 @@ const test = axios({
     url: url,
     auth: {
         // basic: Y2FsbGFuZGNvbXBsYWluQGdtYWlsLmNvbTpjYWxsY29tcGxhaW4xMjM0NTY3ODk=
-        username: 'callandcomplain@gmail.com',
-        password: 'callcomplain123456789'
+        username: username,
+        password: password
     },
     headers: {
         'Content-Type': 'application/json',
