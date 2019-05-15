@@ -17,8 +17,7 @@ server.get('/', (req, res) => {
     `)
 })
 
-
-server.use('/api/routes', formRoutes)
-server.use('/api/routes', twitterRoutes)
+configureRoutes(server);
+// server.use('/api/routes', configureRoutes)
 
 module.exports = server;

@@ -1,7 +1,4 @@
 require('dotenv').config();
-
-const knex = require('knex')
-
 const Twitter = require('twitter');
 
 const client = new Twitter({
@@ -11,26 +8,32 @@ const client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-const knexConfig = {
-    client: 'sqlite3',
-    connection: {
-        filename: './data/CallComplain.db3'
-    },
-    useNullAsDefault: true
-};
-
-const db = knex(knexConfig);
 
 module.exports = {
-    postTweet
-};
 
-function postTweet(tweets) { 
-    client.post('statuses/update', tweets)
-    .then(tweet => {
-        console.log(tweet)
-    })
-    .catch(error => {
-        console.log(error)
-})
+    createTweet: async function(tweet) {
+        try {
+            tweetConfirm = await client.post('statuses/update', tweet);
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    getSingleTweet: async function(id){
+        try {
+            tweetConfirm = await client.get('statuses/show', {id})
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    deleteTweet: async function(id) {
+        try {
+            delConfirm = await client.post('statuses/destroy', {id})
+        } catch (error) {
+            console.log(error)
+        }
+        
+    },
+    // getTweetByUser,
+    // getLastNTweets
 }
+
