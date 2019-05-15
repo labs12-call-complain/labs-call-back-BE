@@ -50,18 +50,23 @@ COMPLAINT FEED {
     type = presentational (no state)
 
     calls = axios GET (get req to backend, grabs FORM object and displays to screen)
+    
+    EndPoint - /api/routes/posts
 }
 
 EDIT PROFILE {
     type = class
 
     state =   (COMPLETED) allow user to edit firebase.currentuser info
+
 }
 
 VIEW COMPLAINT HISTORY {
     type = presentational (no state)
 
-    calls = axios get:id (gets all forms posted with the users uid and displays them)
+    calls = axios get:UID (gets all forms posted with the users uid and displays them)
+
+    EndPoint - /api/routes/posts:UID
 }
 
 --------------
@@ -107,6 +112,20 @@ FORM 4 (CONFIRMATION) {
     }
 
     call = axios POST to DB, (will then automatically show up on the users recent posts)
+
+    call 2 = axios POST to Twitter (autopopulate from text on form obj)
+
+---------------------------------
+
+    EndPoint - /api/routes/makepost
+
+    Body: {FORM object}
+
+    Endpoint 2 - /api/routes/makeatweet
+
+    Body: {status: "Content of tweet goes here!"}
+
+
 })
 
 FORM 5 (THANK YOU) {

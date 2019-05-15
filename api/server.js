@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const configureRoutes = require('../config/routes.js');
+const twitterRoutes = require('../config/twitter/twitter-router');
+const formRoutes = require("../config/forms/form-router")
 
 const server = express();
 
