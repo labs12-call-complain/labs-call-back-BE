@@ -18,6 +18,7 @@ server.get('/', (req, res) => {
 })
 
 configureRoutes(server);
-// server.use('/api/routes', configureRoutes)
+server.use('/api/routes', formRoutes)
+server.use('/api/routes', twitterRoutes)
 
 module.exports = server;
