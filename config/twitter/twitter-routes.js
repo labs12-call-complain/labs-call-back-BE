@@ -10,7 +10,7 @@ const client = new Twitter({
 });
 
 
-module.exports ={ 
+module.exports = { 
     
     postTweet: async function(req, res){
         try {
