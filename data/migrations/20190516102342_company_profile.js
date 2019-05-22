@@ -9,14 +9,16 @@ exports.up = function(knex, Promise) {
             .notNullable();
 
             tbl
-            .string('address', 128)
+            .string('address', 128);
             
             tbl
             .string('phone', 128);
 
-            tbl.string('website', 128)
+            tbl
+            .string('website', 128)
             
-            tbl.string('')
+            tbl
+            .integer('rating');
 
         })
 };
