@@ -1,5 +1,6 @@
 require('dotenv').config();
 const Twitter = require('twitter');
+const db = require('../data/dbConfig.js')
 
 const client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -14,6 +15,7 @@ module.exports = {
     createTweet: async function(tweet) {
         try {
             tweetConfirm = await client.post('statuses/update', tweet);
+            db.insert()
         } catch (error) {
             console.log(error);
         }
