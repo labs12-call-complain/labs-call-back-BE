@@ -48,7 +48,7 @@ function addPost(post) {
     return db('form')
     .insert(post)
     .then(ids => {
-      return getByID(ids[0]);
+      return getByID(ids[0])
     });
 }
 

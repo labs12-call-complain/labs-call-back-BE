@@ -13,7 +13,10 @@ exports.up = function(knex, Promise) {
             
             tbl
             .string('phone', 128);
+
+            tbl.string('website', 128)
             
+            tbl.string('')
 
         })
 };
