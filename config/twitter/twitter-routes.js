@@ -12,18 +12,12 @@ const client = new Twitter({
 
 module.exports = { 
     
-    postTweet: async function(req, res){
-        try {
-            const tweet = req.body;
-            const tweetConfirm = await client.post('statuses/update', tweet);
-            const dbTweet = await TwitterModel.createTweet(tweetConfirm);
-            res.status(200).json({
-                message: `New Tweet Created : ${dbTweet.text}`
-            })
+    getAll: async (req, res) => {
+        try{
+            const tweets = await TwitterModel.get()
+            res.status(200).json(tweets);
         } catch (error) {
-            res.status(500).json({
-                message: `unable to create tweet : ${error}`
-            })
+            res.status(500).json({message: `error getting tweets : ${error}`})
         }
     },
     getTweet: async function(req, res){
@@ -31,11 +25,27 @@ module.exports = {
             const tweetConfirm = await client.get('statuses/show', {id})
             const dbTweet = TwitterModel.getSingleTweet(tweetConfirm);
             res.status(200).json({
-                message: `Recieved tweet: ${dbTweet.text}`
+                message: `Received tweet: ${dbTweet.text} with id ${dbTweet.twitter_id}`
             })
         } catch (error) {
             res.status(500).json({
                 message: `unable to get tweet : ${error}`
+            })
+        }
+    },
+    postTweet: async function(req, res){
+        try {
+            const tweet = req.body;
+            const tweetConfirm = await client.post('statuses/update', tweet);
+            console.log(tweetConfirm);
+            const dbTweet = await TwitterModel.createTweet(tweetConfirm);
+            console.log(dbTweet);
+            res.status(200).json({
+                message: `New Tweet Created : ${dbTweet.tweet_text}`
+            })
+        } catch (error) {
+            res.status(500).json({
+                message: `unable to create tweet : ${error}`
             })
         }
     },

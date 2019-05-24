@@ -19,8 +19,8 @@ const client = new Twitter({
 
 const postTweet = async function() {
     try {
-        tweet = await client.post('statuses/update', {status: "Post from ExpressJS 5"});
-        db.insert(tweet.id)
+        tweet = await client.post('statuses/update', {status: "Post from ExpressJS 5/23"});
+        
         
         console.log(tweet.id);
         console.log(tweet.id_str);
