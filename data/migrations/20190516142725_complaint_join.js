@@ -33,6 +33,9 @@ exports.up = function(knex, Promise) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
 
+        tbl.integer('upVote')
+        .defaultTo(0)
+
         
     })
 };

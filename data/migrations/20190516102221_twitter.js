@@ -6,10 +6,8 @@ exports.up = function(knex, Promise) {
             tbl.increments('tweet_id');
 
             tbl.integer('twitter_id')
-            .notNullable();
             
-            tbl.text('tweet-text')
-            .notNullable();
+            tbl.text('tweet_text')
 
             tbl.string('entities', 128);
 
