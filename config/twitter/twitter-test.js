@@ -32,7 +32,15 @@ const postTweet = async function() {
 }
 
 
-    
+const getTweet = async function(id){
+    try {
+        const tweetConfirm = await client.get('statuses/show/', {id})
+        console.log(tweetConfirm);
+
+    } catch (error) {
+       console.log(error)
+    }
+}
 
 
 
@@ -48,4 +56,5 @@ const postTweet = async function() {
 // }
 
 
-postTweet();
+// postTweet();
+getTweet(1131728639115059200);
