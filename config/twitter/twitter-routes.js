@@ -22,10 +22,13 @@ module.exports = {
     },
     getTweet: async function(req, res){
         try {
-            const tweetConfirm = await client.get('statuses/show', {id})
-            const dbTweet = TwitterModel.getSingleTweet(tweetConfirm);
+            let id = req.params.id;
+            const tweetConfirm = await client.get('statuses/show/', {id})
+            console.log(tweetConfirm);
+            // const dbTweet = TwitterModel.getSingleTweet(tweetConfirm);
             res.status(200).json({
-                message: `Received tweet: ${dbTweet.text} with id ${dbTweet.twitter_id}`
+                message: tweetConfirm
+                // message: `Received tweet: ${dbTweet.text} with id ${dbTweet.twitter_id}`
             })
         } catch (error) {
             res.status(500).json({
@@ -37,7 +40,7 @@ module.exports = {
         try {
             const tweet = req.body;
             const tweetConfirm = await client.post('statuses/update', tweet);
-            console.log(tweetConfirm);
+            // console.log(tweetConfirm);
             const dbTweet = await TwitterModel.createTweet(tweetConfirm);
             console.log(dbTweet);
             res.status(200).json({

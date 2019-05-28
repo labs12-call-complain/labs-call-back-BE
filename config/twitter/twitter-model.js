@@ -13,17 +13,21 @@ module.exports = {
     get: function(){
         return db('tweets')
     },
-    getSingleTweet: function(tweet_id){
+    getSingleTweet: function(id){
         return db('tweets')
-        .where({tweet_id})
-        .first()
+        .where({tweet_id: id})
+        // .first()
     },
     createTweet: function(tweet) {
         return db('tweets')
         .insert(
             {twitter_id: tweet.id, tweet_text: tweet.text}
         )
-        .then(([tweet_id]) => this.getSingleTweet(tweet_id))
+        .then(([tweet_id]) => {
+            this.getSingleTweet(tweet_id)
+            db('complaint')
+            .insert({tweet_key: tweet_id})
+        })
     },
     deleteTweet: function(id) {
         return db('tweets')
