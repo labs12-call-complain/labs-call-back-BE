@@ -32,10 +32,14 @@ exports.up = function(knex, Promise) {
         .string('StoreWebsite', 128)
         
         tbl
-        .text('text').notNullable()
+        .text('tweet').notNullable()
         
         tbl
         .integer('upVote')
+        .defaultTo(0)
+
+        tbl
+        .integer('downVote')
         .defaultTo(0)
     })
   };
