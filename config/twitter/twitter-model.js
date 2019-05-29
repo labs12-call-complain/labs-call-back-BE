@@ -15,8 +15,8 @@ module.exports = {
     },
     getSingleTweet: function(id){
         return db('tweets')
-        .where({tweet_id: id})
-        // .first()
+        .where(tweet_id, id)
+        .first()
     },
     createTweet: function(tweet) {
         return db('tweets')
@@ -25,8 +25,8 @@ module.exports = {
         )
         .then(([tweet_id]) => {
             this.getSingleTweet(tweet_id)
-            db('complaint')
-            .insert({tweet_key: tweet_id})
+            // db('complaint')
+            // .insert({tweet_key: twitter_id})
         })
     },
     deleteTweet: function(id) {
