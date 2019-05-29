@@ -40,11 +40,12 @@ module.exports = {
         try {
             const tweet = req.body;
             const tweetConfirm = await client.post('statuses/update', tweet);
-            // console.log(tweetConfirm);
-            const dbTweet = await TwitterModel.createTweet(tweetConfirm);
-            console.log(dbTweet);
+            console.log(tweetConfirm);
+            // const dbTweet = await TwitterModel.createTweet(tweetConfirm);
+            // console.log(dbTweet);
             res.status(200).json({
-                message: `New Tweet Created : ${dbTweet.tweet_text}`
+                message: `New Tweet Created : Id number: ${tweetConfirm.id} with text ${tweetConfirm.text}`
+                // message: `New Tweet Created : ${dbTweet.tweet_text}`
             })
         } catch (error) {
             res.status(500).json({
