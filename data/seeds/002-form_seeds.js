@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
       StoreGoogleRating: 3,
       StoreWebsite: "https://www.mcdonalds.com/us/en-us.html",
       text: "Terrible service! My mchicken was blue!",
-      audioFile: "n/a"
+      upVote: 5
     },
       { DisplayName: "Randy Jones",
       Email: "RandyyRand@gmail.com",
@@ -21,7 +21,18 @@ exports.seed = function(knex, Promise) {
       StoreGoogleRating: 2.3,
       StoreWebsite: "https://www.walmart.com/",
       text: "Clerk was very rude, store was not clean, and I slipped on a banana peel on my way out!",
-      audioFile: "n/a"
+      upVote: 8
+    },
+    { DisplayName: "Tom Haverford",
+      Email: "HaverfordT@gmail.com",
+      UID: "a1s2d3f4g54as;",
+      StoreName: "Mcdonalds",
+      StoreLocation: "Pawnee",
+      StorePhoneNumber: "565-145-9115",
+      StoreGoogleRating: 2.3,
+      StoreWebsite: "https://www.mcdonalds.com/",
+      text: "Out of icecream again :(",
+      upVote: 21
     },
     { DisplayName: "John Smith",
       Email: "jsmith2365@icloud.com",
@@ -32,7 +43,7 @@ exports.seed = function(knex, Promise) {
       StoreGoogleRating: 3.7,
       StoreWebsite: "https://www.7-eleven.com/",
       text: "AM PM slurpees are way better.",
-      audioFile: "n/a"
+      upVote: 4
     },
     { DisplayName: "Randy Jones",
       Email: "RandyyRand@gmail.com",
@@ -43,7 +54,29 @@ exports.seed = function(knex, Promise) {
       StoreGoogleRating: 1.5,
       StoreWebsite: "https://www.walmart.com/",
       text: "Terrible Company! Ive been thinking of switching to chase for awhile but this was the last straw. They closed my bank account without warning! Save your time and go with Chase or Key-Bank",
-      audioFile: "n/a"
+      upVote: 2
+    },
+    { DisplayName: "Carl Howard",
+      Email: "Choward123@gmail.com",
+      UID: "a1s2d3f4g54;",
+      StoreName: "Walmart",
+      StoreLocation: "Bend",
+      StorePhoneNumber: "569-121-5998",
+      StoreGoogleRating: 2.3,
+      StoreWebsite: "https://www.walmart.com/",
+      text: "Prices are wayy too expensive! This is Walmart not Gucci!",
+      upVote: 11
+    },
+    { DisplayName: "Kevin Malone",
+      Email: "KMalone@gmail.com",
+      UID: "a1s2d3f4g54a;",
+      StoreName: "Mcdonalds",
+      StoreLocation: "Seattle",
+      StorePhoneNumber: "998-121-5998",
+      StoreGoogleRating: 2.3,
+      StoreWebsite: "https://www.mcdonalds.com/",
+      text: "The fries were too salty, and the big mac made me fat!",
+      upVote: 1
     }
     ]);
 };
